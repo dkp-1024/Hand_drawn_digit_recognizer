@@ -1,0 +1,18 @@
+from accelerate import profiler
+import numpy as np
+
+def dot(a, b):
+  sum=0
+  for i in range(len(a)):
+      sum += a[i]*b[i]
+  return sum
+
+a = np.arange(16, dtype=np.float32)
+b = np.arange(16, dtype=np.float32)
+
+accelerate.profiler.plot()
+# p = profiler.profile( signatures = False)
+# p.enable()
+# dot(a, b)
+# p.disable()
+# p.print_stats()
